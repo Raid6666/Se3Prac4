@@ -9,6 +9,7 @@ package pkg2048game1;
  * @author raedalmutairi
  */
 
+
 import java.util.Scanner;
 
 
@@ -24,6 +25,21 @@ public class Run {
         do{
             System.out.print("Next move? ");
             input = scan.nextLine();
+            if(input.equalsIgnoreCase("l")){
+                
+            }
+            else if(input.equalsIgnoreCase("r")){
+                
+            }
+            else if(input.equalsIgnoreCase("t")){
+                
+            }
+            else if(input.equalsIgnoreCase("d")){
+                
+            }
+            else if(!input.equalsIgnoreCase("x")){
+                System.out.println("Incorrect input, please enter l, r, t, or d to tilt board, or x to exit.");
+            }
         }while(!input.equalsIgnoreCase("X"));
     }
     
