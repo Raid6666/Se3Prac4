@@ -12,6 +12,7 @@ package pkg2048game1;
 public class Board {
     
     private Tile[][] tiles= new Tile[4][4];
+    private int score = 0;
     
     public Board(){
         for(int i=0; i<4; i++){
@@ -39,6 +40,14 @@ public class Board {
             }
             System.out.print("\n");
         }
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
     }
     
     public void tiltLeft(){
