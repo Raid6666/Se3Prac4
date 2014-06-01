@@ -40,4 +40,20 @@ public class Board {
             System.out.print("\n");
         }
     }
+    
+    public void tiltLeft(){
+        
+    }
+    
+    public void tiltRight(){
+        
+    }
+    
+    public void tiltTop(){
+        
+    }
+    
+    public void tiltDown(){
+        
+    }
 }
