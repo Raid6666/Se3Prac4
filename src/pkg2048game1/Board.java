@@ -61,6 +61,19 @@ public class Board {
         return 4;
     }
     
+    public void populateRandomCell() {
+        int i,j;
+        int counter = 1000;
+        do{
+            i = getRandomNumberBetween0And3();
+            j = getRandomNumberBetween0And3();
+            counter--;
+        }while(tiles[i][j].getValue()!=0 && counter>0);
+        
+        int value = getRandomNumber2Or4();
+        tiles[i][j].setValue(value);
+    }
+    
     public void tiltLeft(){
         for(int r=0; r<4; r++){
             for(int c=2; c>=0; c--){
