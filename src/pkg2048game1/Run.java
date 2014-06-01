@@ -26,16 +26,16 @@ public class Run {
             System.out.print("Next move? ");
             input = scan.nextLine();
             if(input.equalsIgnoreCase("l")){
-                
+                board.tiltLeft();
             }
             else if(input.equalsIgnoreCase("r")){
-                
+                board.tiltRight();
             }
             else if(input.equalsIgnoreCase("t")){
-                
+                board.tiltTop();
             }
             else if(input.equalsIgnoreCase("d")){
-                
+                board.tiltDown();
             }
             else if(!input.equalsIgnoreCase("x")){
                 System.out.println("Incorrect input, please enter l, r, t, or d to tilt board, or x to exit.");
