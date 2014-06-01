@@ -93,7 +93,16 @@ public class Board {
     }
     
     public void tiltRight(){
-
+        for(int i=0; i<4; i++){
+            for(int j=1; j<=3; j++){
+                if(tiles[i][j].getValue()==0){
+                    for(int k=j-1; k>=0; k--){
+                        tiles[i][k+1].setValue(tiles[i][k].getValue());
+                        tiles[i][k].setValue(0);
+                    }
+                }
+            }
+        }
     }
     
     public void tiltTop(){
