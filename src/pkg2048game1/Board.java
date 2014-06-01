@@ -20,12 +20,17 @@ public class Board {
                 tiles[i][j] = new Tile(0);
             }
         }
+        populateRandomCell();
+        populateRandomCell();
     }
     
     public void displayBoard(){
         for(int i=0; i<4; i++){
             for(int j=0; j<4; j++){
-                if(tiles[i][j].getValue()<10){
+                if(tiles[i][j].getValue()==0){
+                    System.out.print("[    ]");
+                }
+                else if(tiles[i][j].getValue()<10){
                     System.out.print("[   "+tiles[i][j]+"]");
                 }
                 else if(tiles[i][j].getValue()<100){
@@ -75,16 +80,7 @@ public class Board {
     }
     
     public void tiltLeft(){
-        for(int r=0; r<4; r++){
-            for(int c=2; c>=0; c--){
-                if(tiles[r][c].getValue()==0){
-                    for(int i=c+1; i<4; i++){
-                        tiles[r][i-1].setValue(tiles[r][i].getValue());
-                        tiles[r][i].setValue(0);
-                    }
-                }
-            }
-        }
+
     }
     
     public void tiltRight(){
