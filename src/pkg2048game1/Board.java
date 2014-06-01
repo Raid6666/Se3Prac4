@@ -80,11 +80,20 @@ public class Board {
     }
     
     public void tiltLeft(){
-
+        for(int i=0; i<4; i++){
+            for(int j=2; j>=0; j--){
+                if(tiles[i][j].getValue()==0){
+                    for(int k=j+1; k<4; k++){
+                        tiles[i][k-1].setValue(tiles[i][k].getValue());
+                        tiles[i][k].setValue(0);
+                    }
+                }
+            }
+        }
     }
     
     public void tiltRight(){
-        
+
     }
     
     public void tiltTop(){
