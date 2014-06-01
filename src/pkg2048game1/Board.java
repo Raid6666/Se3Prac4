@@ -54,6 +54,13 @@ public class Board {
         return (int)(Math.random() * 4);
     }
     
+    private int getRandomNumber2Or4(){
+        if ((int)(Math.random() * 2) ==0 ){
+            return 2;
+        }
+        return 4;
+    }
+    
     public void tiltLeft(){
         for(int r=0; r<4; r++){
             for(int c=2; c>=0; c--){
