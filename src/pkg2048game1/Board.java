@@ -119,6 +119,15 @@ public class Board {
     }
     
     public void tiltDown(){
-        
+        for(int i=0; i<4; i++){
+            for(int j=1; j<=3; j++){
+                if(tiles[j][i].getValue()==0){
+                    for(int k=j-1; k>=0; k--){
+                        tiles[k+1][i].setValue(tiles[k][i].getValue());
+                        tiles[k][i].setValue(0);
+                    }
+                }
+            }
+        }
     }
 }
