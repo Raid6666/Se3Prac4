@@ -50,8 +50,21 @@ public class Board {
         this.score = score;
     }
     
+   private int getRandomNumberBetween0And3(){
+        return (int)(Math.random() * 4);
+    }
+    
     public void tiltLeft(){
-        
+        for(int r=0; r<4; r++){
+            for(int c=2; c>=0; c--){
+                if(tiles[r][c].getValue()==0){
+                    for(int i=c+1; i<4; i++){
+                        tiles[r][i-1].setValue(tiles[r][i].getValue());
+                        tiles[r][i].setValue(0);
+                    }
+                }
+            }
+        }
     }
     
     public void tiltRight(){
