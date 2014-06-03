@@ -54,4 +54,18 @@ public class Test {
         board.getTiles()[3][0].setValue(0);
     }
     
+    @org.junit.Test
+    public void testTiltDown(){
+        Board board = new Board();
+        board.getTiles()[0][0].setValue(2);
+        board.getTiles()[1][0].setValue(0);
+        board.getTiles()[2][0].setValue(0);
+        board.getTiles()[3][0].setValue(0);
+        board.tiltDown();
+        board.getTiles()[0][0].setValue(0);
+        board.getTiles()[1][0].setValue(0);
+        board.getTiles()[2][0].setValue(0);
+        board.getTiles()[3][0].setValue(2);
+    }
+    
 }
