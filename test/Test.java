@@ -95,4 +95,18 @@ public class Test {
         assertEquals(board.getTiles()[0][2].getValue(), 0);
         assertEquals(board.getTiles()[0][3].getValue(), 4);
     }
+    
+    @org.junit.Test
+    public void testMergeTop(){
+        Board board = new Board();
+        board.getTiles()[0][0].setValue(2);
+        board.getTiles()[1][0].setValue(2);
+        board.getTiles()[2][0].setValue(0);
+        board.getTiles()[3][0].setValue(0);
+        board.mergeTop();
+        board.getTiles()[0][0].setValue(4);
+        board.getTiles()[1][0].setValue(0);
+        board.getTiles()[2][0].setValue(0);
+        board.getTiles()[3][0].setValue(0);
+    }
 }
