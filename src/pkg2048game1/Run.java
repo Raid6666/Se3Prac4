@@ -27,21 +27,25 @@ public class Run {
             input = scan.nextLine();
             if(input.equalsIgnoreCase("l")){
                 board.tiltLeft();
+                board.mergeLeft();
                 board.populateRandomCell();
                 board.displayBoard();
             }
             else if(input.equalsIgnoreCase("r")){
                 board.tiltRight();
+                board.mergeRight();
                 board.populateRandomCell();
                 board.displayBoard();
             }
             else if(input.equalsIgnoreCase("t")){
                 board.tiltTop();
+                board.mergeTop();
                 board.populateRandomCell();
                 board.displayBoard();
             }
             else if(input.equalsIgnoreCase("d")){
                 board.tiltDown();
+                board.mergeDown();
                 board.populateRandomCell();
                 board.displayBoard();
             }
