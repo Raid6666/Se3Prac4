@@ -39,4 +39,19 @@ public class Test {
         assertEquals(board.getTiles()[0][2].getValue(), 0);
         assertEquals(board.getTiles()[0][3].getValue(), 2);
     }
+    
+    @org.junit.Test
+    public void testTiltTop(){
+        Board board = new Board();
+        board.getTiles()[0][0].setValue(0);
+        board.getTiles()[1][0].setValue(0);
+        board.getTiles()[2][0].setValue(0);
+        board.getTiles()[3][0].setValue(2);
+        board.tiltTop();
+        board.getTiles()[0][0].setValue(2);
+        board.getTiles()[1][0].setValue(0);
+        board.getTiles()[2][0].setValue(0);
+        board.getTiles()[3][0].setValue(0);
+    }
+    
 }
