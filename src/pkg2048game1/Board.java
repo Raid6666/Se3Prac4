@@ -156,6 +156,7 @@ public class Board {
             for(int j=0; j<3; j++){
                 if(tiles[i][j].getValue() == tiles[i][j+1].getValue()){
                     tiles[i][j].setValue(tiles[i][j].getValue()+tiles[i][j+1].getValue());
+                    score += tiles[i][j].getValue();
                     tiles[i][j+1].setValue(0);
                     tiltLeft();
                 }
