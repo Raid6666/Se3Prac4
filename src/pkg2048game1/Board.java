@@ -164,7 +164,15 @@ public class Board {
     }
     
     public void mergeRight(){
-        
+        for(int i=0; i<4; i++){
+            for(int j=3; j>0; j--){
+                if(tiles[i][j].getValue() == tiles[i][j-1].getValue()){
+                    tiles[i][j].setValue(tiles[i][j].getValue()+tiles[i][j-1].getValue());
+                    tiles[i][j-1].setValue(0);
+                    tiltRight();
+                }
+            }
+        }
     }
     
     public void mergeTop(){
