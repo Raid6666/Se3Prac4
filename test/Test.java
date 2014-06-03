@@ -68,4 +68,17 @@ public class Test {
         board.getTiles()[3][0].setValue(2);
     }
     
+    @org.junit.Test
+    public void testMergeLeft(){
+        Board board = new Board();
+        board.getTiles()[0][0].setValue(2);
+        board.getTiles()[0][1].setValue(2);
+        board.getTiles()[0][2].setValue(0);
+        board.getTiles()[0][3].setValue(0);
+        board.mergeLeft();
+        assertEquals(board.getTiles()[0][0].getValue(), 4);
+        assertEquals(board.getTiles()[0][1].getValue(), 0);
+        assertEquals(board.getTiles()[0][2].getValue(), 0);
+        assertEquals(board.getTiles()[0][3].getValue(), 0);
+    }
 }
