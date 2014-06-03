@@ -48,7 +48,7 @@ public class Run {
             else if(!input.equalsIgnoreCase("x")){
                 System.out.println("Incorrect input, please enter l, r, t, or d to tilt board, or x to exit.");
             }
-        }while(!input.equalsIgnoreCase("X"));
+        }while(!input.equalsIgnoreCase("X") && !board.isBoardFull());
         
         System.out.println("Game over, your score is "+board.getScore());
     }
