@@ -109,4 +109,18 @@ public class Test {
         board.getTiles()[2][0].setValue(0);
         board.getTiles()[3][0].setValue(0);
     }
+    
+    @org.junit.Test
+    public void testMergeDown(){
+        Board board = new Board();
+        board.getTiles()[0][0].setValue(0);
+        board.getTiles()[1][0].setValue(0);
+        board.getTiles()[2][0].setValue(2);
+        board.getTiles()[3][0].setValue(2);
+        board.mergeDown();
+        board.getTiles()[0][0].setValue(0);
+        board.getTiles()[1][0].setValue(0);
+        board.getTiles()[2][0].setValue(0);
+        board.getTiles()[3][0].setValue(4);
+    }
 }
