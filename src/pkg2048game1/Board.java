@@ -150,4 +150,20 @@ public class Board {
             }
         }
     }
+    
+    public void mergeLeft(){
+        
+    }
+    
+    public void mergeRight(){
+        
+    }
+    
+    public void mergeTop(){
+        
+    }
+    
+    public void mergeDown(){
+        
+    }
 }
