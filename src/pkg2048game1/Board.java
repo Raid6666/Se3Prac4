@@ -182,6 +182,7 @@ public class Board {
             for(int c=0; c<3; c++){
                 if(tiles[c][r].getValue() == tiles[c+1][r].getValue()){
                     tiles[c][r].setValue(tiles[c][r].getValue()+tiles[c+1][r].getValue());
+                    score += tiles[c][r].getValue();
                     tiles[c+1][r].setValue(0);
                     tiltTop();
                 }
