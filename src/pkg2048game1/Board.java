@@ -188,6 +188,14 @@ public class Board {
     }
     
     public void mergeDown(){
-        
+        for(int r=0; r<4; r++){
+            for(int c=3; c>0; c--){
+                if(tiles[c][r].getValue() == tiles[c-1][r].getValue()){
+                    tiles[c][r].setValue(tiles[c][r].getValue()+tiles[c-1][r].getValue());
+                    tiles[c-1][r].setValue(0);
+                    tiltDown();
+                }
+            }
+        }
     }
 }
