@@ -46,6 +46,12 @@ public class Board {
             System.out.print("\n");
         }
     }
+    public Tile[][] getTiles() {
+        return tiles;
+    }
+    public void setTiles (Tile[][] tiles ){
+        this.tiles = tiles;
+    }
 
     public int getScore() {
         return score;
