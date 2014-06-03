@@ -46,12 +46,6 @@ public class Board {
             System.out.print("\n");
         }
     }
-    public Tile[][] getTiles() {
-        return tiles;
-    }
-    public void setTiles (Tile[][] tiles ){
-        this.tiles = tiles;
-    }
 
     public int getScore() {
         return score;
@@ -60,8 +54,16 @@ public class Board {
     public void setScore(int score) {
         this.score = score;
     }
+
+    public Tile[][] getTiles() {
+        return tiles;
+    }
+
+    public void setTiles(Tile[][] tiles) {
+        this.tiles = tiles;
+    }
     
-   private int getRandomNumberBetween0And3(){
+    private int getRandomNumberBetween0And3(){
         return (int)(Math.random() * 4);
     }
     
@@ -83,6 +85,18 @@ public class Board {
         
         int value = getRandomNumber2Or4();
         tiles[i][j].setValue(value);
+    }
+    
+    public boolean isBoardFull(){
+        boolean boardFull = true;
+        for(int i=0; i<4; i++){
+            for(int j=0; j<4; j++){
+                if(tiles[i][j].getValue()==0){
+                    boardFull = false;
+                }
+            }
+        }
+        return boardFull;
     }
     
     public void tiltLeft(){
