@@ -27,15 +27,23 @@ public class Run {
             input = scan.nextLine();
             if(input.equalsIgnoreCase("l")){
                 board.tiltLeft();
+                board.populateRandomCell();
+                board.displayBoard();
             }
             else if(input.equalsIgnoreCase("r")){
                 board.tiltRight();
+                board.populateRandomCell();
+                board.displayBoard();
             }
             else if(input.equalsIgnoreCase("t")){
                 board.tiltTop();
+                board.populateRandomCell();
+                board.displayBoard();
             }
             else if(input.equalsIgnoreCase("d")){
                 board.tiltDown();
+                board.populateRandomCell();
+                board.displayBoard();
             }
             else if(!input.equalsIgnoreCase("x")){
                 System.out.println("Incorrect input, please enter l, r, t, or d to tilt board, or x to exit.");
