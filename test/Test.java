@@ -15,6 +15,7 @@ public class Test {
     @org.junit.Test
     public void testTiltLeft(){
         Board board = new Board();
+        board.setBoardSize(4);
         board.getTiles()[0][0].setValue(0);
         board.getTiles()[0][1].setValue(0);
         board.getTiles()[0][2].setValue(0);
@@ -29,6 +30,7 @@ public class Test {
     @org.junit.Test
     public void testTiltRight(){
         Board board = new Board();
+        board.setBoardSize(4);
         board.getTiles()[0][0].setValue(2);
         board.getTiles()[0][1].setValue(0);
         board.getTiles()[0][2].setValue(0);
@@ -43,6 +45,7 @@ public class Test {
     @org.junit.Test
     public void testTiltTop(){
         Board board = new Board();
+        board.setBoardSize(4);
         board.getTiles()[0][0].setValue(0);
         board.getTiles()[1][0].setValue(0);
         board.getTiles()[2][0].setValue(0);
@@ -57,6 +60,7 @@ public class Test {
     @org.junit.Test
     public void testTiltDown(){
         Board board = new Board();
+        board.setBoardSize(4);
         board.getTiles()[0][0].setValue(2);
         board.getTiles()[1][0].setValue(0);
         board.getTiles()[2][0].setValue(0);
@@ -71,6 +75,7 @@ public class Test {
     @org.junit.Test
     public void testMergeLeft(){
         Board board = new Board();
+        board.setBoardSize(4);
         board.getTiles()[0][0].setValue(2);
         board.getTiles()[0][1].setValue(2);
         board.getTiles()[0][2].setValue(0);
@@ -85,6 +90,7 @@ public class Test {
     @org.junit.Test
     public void testMergeRight(){
         Board board = new Board();
+        board.setBoardSize(4);
         board.getTiles()[0][0].setValue(0);
         board.getTiles()[0][1].setValue(0);
         board.getTiles()[0][2].setValue(2);
@@ -99,6 +105,7 @@ public class Test {
     @org.junit.Test
     public void testMergeTop(){
         Board board = new Board();
+        board.setBoardSize(4);
         board.getTiles()[0][0].setValue(2);
         board.getTiles()[1][0].setValue(2);
         board.getTiles()[2][0].setValue(0);
@@ -113,6 +120,7 @@ public class Test {
     @org.junit.Test
     public void testMergeDown(){
         Board board = new Board();
+        board.setBoardSize(4);
         board.getTiles()[0][0].setValue(0);
         board.getTiles()[1][0].setValue(0);
         board.getTiles()[2][0].setValue(2);
