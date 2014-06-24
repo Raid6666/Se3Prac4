@@ -11,7 +11,7 @@ package pkg2048game1;
 public class Board {
     
     // added by Mansour to allow dynamic board size.
-    private int boardSize = 6;
+    private int boardSize = 4;
     
     private Tile[][] tiles= new Tile[boardSize][boardSize];
     private int score = 0;
