@@ -8,15 +8,17 @@ package pkg2048game1;
  *
  * @author raedalmutairi
  */
-
 public class Board {
     
-    private Tile[][] tiles= new Tile[4][4];
+    // added by Mansour to allow dynamic board size.
+    private int boardSize = 4;
+    
+    private Tile[][] tiles= new Tile[boardSize][boardSize];
     private int score = 0;
     
     public Board(){
-        for(int i=0; i<4; i++){
-            for(int j=0; j<4; j++){
+        for(int i=0; i<boardSize; i++){
+            for(int j=0; j<boardSize; j++){
                 tiles[i][j] = new Tile(0);
             }
         }
@@ -25,8 +27,8 @@ public class Board {
     }
     
     public void displayBoard(){
-        for(int i=0; i<4; i++){
-            for(int j=0; j<4; j++){
+        for(int i=0; i<boardSize; i++){
+            for(int j=0; j<boardSize; j++){
                 if(tiles[i][j].getValue()==0){
                     System.out.print("[    ]");
                 }
@@ -62,9 +64,17 @@ public class Board {
     public void setTiles(Tile[][] tiles) {
         this.tiles = tiles;
     }
+
+    public int getBoardSize() {
+        return boardSize;
+    }
+
+    public void setBoardSize(int boardSize) {
+        this.boardSize = boardSize;
+    }
     
     private int getRandomNumberBetween0And3(){
-        return (int)(Math.random() * 4);
+        return (int)(Math.random() * boardSize);
     }
     
     private int getRandomNumber2Or4(){
@@ -89,8 +99,8 @@ public class Board {
     
     public boolean isBoardFull(){
         boolean boardFull = true;
-        for(int i=0; i<4; i++){
-            for(int j=0; j<4; j++){
+        for(int i=0; i<boardSize; i++){
+            for(int j=0; j<boardSize; j++){
                 if(tiles[i][j].getValue()==0){
                     boardFull = false;
                 }
@@ -100,10 +110,10 @@ public class Board {
     }
     
     public void tiltLeft(){
-        for(int i=0; i<4; i++){
+        for(int i=0; i<boardSize; i++){
             for(int j=2; j>=0; j--){
                 if(tiles[i][j].getValue()==0){
-                    for(int k=j+1; k<4; k++){
+                    for(int k=j+1; k<boardSize; k++){
                         tiles[i][k-1].setValue(tiles[i][k].getValue());
                         tiles[i][k].setValue(0);
                     }
@@ -113,8 +123,8 @@ public class Board {
     }
     
     public void tiltRight(){
-        for(int i=0; i<4; i++){
-            for(int j=1; j<=3; j++){
+        for(int i=0; i<boardSize; i++){
+            for(int j=1; j<=boardSize-1; j++){
                 if(tiles[i][j].getValue()==0){
                     for(int k=j-1; k>=0; k--){
                         tiles[i][k+1].setValue(tiles[i][k].getValue());
@@ -126,10 +136,10 @@ public class Board {
     }
     
     public void tiltTop(){
-        for(int i=0; i<4; i++){
+        for(int i=0; i<boardSize; i++){
             for(int j=2; j>=0; j--){
                 if(tiles[j][i].getValue()==0){
-                    for(int k=j+1; k<4; k++){
+                    for(int k=j+1; k<boardSize; k++){
                         tiles[k-1][i].setValue(tiles[k][i].getValue());
                         tiles[k][i].setValue(0);
                     }
@@ -139,8 +149,8 @@ public class Board {
     }
     
     public void tiltDown(){
-        for(int i=0; i<4; i++){
-            for(int j=1; j<=3; j++){
+        for(int i=0; i<boardSize; i++){
+            for(int j=1; j<=boardSize-1; j++){
                 if(tiles[j][i].getValue()==0){
                     for(int k=j-1; k>=0; k--){
                         tiles[k+1][i].setValue(tiles[k][i].getValue());
@@ -152,8 +162,8 @@ public class Board {
     }
     
     public void mergeLeft(){
-        for(int i=0; i<4; i++){
-            for(int j=0; j<3; j++){
+        for(int i=0; i<boardSize; i++){
+            for(int j=0; j<boardSize-1; j++){
                 if(tiles[i][j].getValue() == tiles[i][j+1].getValue()){
                     tiles[i][j].setValue(tiles[i][j].getValue()+tiles[i][j+1].getValue());
                     score += tiles[i][j].getValue();
@@ -165,8 +175,8 @@ public class Board {
     }
     
     public void mergeRight(){
-        for(int i=0; i<4; i++){
-            for(int j=3; j>0; j--){
+        for(int i=0; i<boardSize; i++){
+            for(int j=boardSize-1; j>0; j--){
                 if(tiles[i][j].getValue() == tiles[i][j-1].getValue()){
                     tiles[i][j].setValue(tiles[i][j].getValue()+tiles[i][j-1].getValue());
                     score += tiles[i][j].getValue();
@@ -178,8 +188,8 @@ public class Board {
     }
     
     public void mergeTop(){
-        for(int r=0; r<4; r++){
-            for(int c=0; c<3; c++){
+        for(int r=0; r<boardSize; r++){
+            for(int c=0; c<boardSize-1; c++){
                 if(tiles[c][r].getValue() == tiles[c+1][r].getValue()){
                     tiles[c][r].setValue(tiles[c][r].getValue()+tiles[c+1][r].getValue());
                     score += tiles[c][r].getValue();
@@ -191,8 +201,8 @@ public class Board {
     }
     
     public void mergeDown(){
-        for(int r=0; r<4; r++){
-            for(int c=3; c>0; c--){
+        for(int r=0; r<boardSize; r++){
+            for(int c=boardSize-1; c>0; c--){
                 if(tiles[c][r].getValue() == tiles[c-1][r].getValue()){
                     tiles[c][r].setValue(tiles[c][r].getValue()+tiles[c-1][r].getValue());
                     score += tiles[c][r].getValue();
